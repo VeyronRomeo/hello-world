@@ -1,4 +1,3 @@
 hello-world
 ===========
-
-just anther repository
+This is my frist git test!
