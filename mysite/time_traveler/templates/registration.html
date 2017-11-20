@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <script type="text/javascript" charset="gbk" module="$" src="https://dlweb.sogoucdn.com/common/lib/jquery/jquery-1.11.0.min.js"></script>
+</head>
+<body>
+<h2>注册账号</h2>
+<form action="/time_trl/create/" method=post>{% csrf_token %}
+    <table>{{form}}</table>
+    <input type="submit">
+</form>
+
+
+<script>
+    $(
+                function () {
+                $("#id_uname").blur(
+                    function () {
+                        var uname = $("#id_uname").val()
+                        $.ajax(
+                            {
+                                url:"/time_trl/valide_name/",
+                                type:"get",
+                                data:{"uname":uname},
+                                success:function (data) {
+                          //          $("#id_name").val("name is exsit")
+                                    console.log(data)
+                                },
+                                error:function (err) {
+                                   console.log(err)
+                                }
+                            }
+                        )
+                    }
+                )
+            }
+        )
+</script>
+</body>
+</html>

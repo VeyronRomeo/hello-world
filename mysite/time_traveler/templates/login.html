@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<form action="/time_trl/logined/" method="post">{% csrf_token %}
+<ul>
+    <li><input name="uname" type="text" placeholder="输入你的账号"></li>
+    <li><input name="upasswrod" type="password" placeholder="输入你的密码"></li>
+    <li><input type="submit"></li>
+</ul>
+</form>
+</body>
+</html>
